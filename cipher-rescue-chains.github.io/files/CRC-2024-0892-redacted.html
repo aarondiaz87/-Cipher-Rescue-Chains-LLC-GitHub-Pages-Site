@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Report CRC-2024-0892 | Cipher Rescue Chains</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', 'Segoe UI', 'Arial', monospace;
+            background: white;
+            color: #1a1a2e;
+            line-height: 1.5;
+            padding: 40px;
+        }
+        .report-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .report-header {
+            background: #1a1a2e;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .report-header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .report-header .case-number {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        .report-header .date {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .report-section {
+            padding: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .report-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .report-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: #2d3748;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #f7fafc;
+            font-weight: 600;
+        }
+        .flow-diagram {
+            background: #f7fafc;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            border-radius: 8px;
+            margin: 20px 0;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .warning-box {
+            background: #fef5e7;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .success-box {
+            background: #e6f7e6;
+            border-left: 4px solid #2e7d32;
+            padding: 16px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .footer {
+            padding: 20px 30px;
+            background: #f7fafc;
+            font-size: 11px;
+            color: #718096;
+            text-align: center;
+        }
+        .confidential {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e53e3e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        @media print {
+            body {
+                padding: 0;
+            }
+            .report-container {
+                box-shadow: none;
+                border: none;
+            }
+            .warning-box, .success-box {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <div class="report-header">
+            <h1>CIPHER RESCUE CHAINS, LLC</h1>
+            <div class="case-number">FORENSIC INVESTIGATION REPORT</div>
+            <div class="case-number">Case No: CRC-2024-0892</div>
+            <div class="date">Issued: November 20, 2024</div>
+        </div>
+        
+        <div class="confidential">🔒 CONFIDENTIAL – ATTORNEY-CLIENT PRIVILEGED 🔒</div>
+        
+        <div class="report-section">
+            <h2>1. EXECUTIVE SUMMARY</h2>
+            <table>
+                <tr>
+                    <th style="width: 30%">Field</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Victim</strong></td>
+                    <td>Confidential (Business Entity – Singapore)</td>
+                </tr>
+                <tr>
+                    <td><strong>Loss Amount</strong></td>
+                    <td>47.3 ETH (~$152,000 USD at time of incident)</td>
+                </tr>
+                <tr>
+                    <td><strong>Incident Type</strong></td>
+                    <td>Phishing attack via compromised wallet credentials</td>
+                </tr>
+                <tr>
+                    <td><strong>Incident Date</strong></td>
+                    <td>November 15, 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Tracing Status</strong></td>
+                    <td>Completed – Full path identified</td>
+                </tr>
+                <tr>
+                    <td><strong>Recovery Status</strong></td>
+                    <td>Funds located at Binance – Frozen awaiting legal process</td>
+                </tr>
+                <tr>
+                    <td><strong>Estimated Recovery Timeline</strong></td>
+                    <td>30-45 days (legal process pending)</td>
+                </tr>
+            </table>
+            
+            <div class="success-box">
+                <strong>✅ KEY FINDING:</strong> Funds successfully traced to Binance exchange deposit address. Freezing order obtained within 24 hours of tracing completion. Recovery probability: HIGH.
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2>2. INCIDENT DETAILS</h2>
+            <p><strong>Victim Description:</strong> Singapore-based cryptocurrency trading firm with operational wallet compromised via phishing email targeting employee credentials.</p>
+            <p><strong>Attack Vector:</strong> Malicious link in phishing email led to cloned wallet interface. Employee entered seed phrase, granting attacker access.</p>
+            <p><strong>Initial Loss Transaction:</strong></p>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Transaction Hash</td>
+                    <td><code>0x7f8a3b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a</code></td>
+                </tr>
+                <tr>
+                    <td>Block Number</td>
+                    <td>20,845,231</td>
+                </tr>
+                <tr>
+                    <td>Timestamp</td>
+                    <td>2024-11-15 14:23:17 UTC</td>
+                </tr>
+                <tr>
+                    <td>From (Victim Wallet)</td>
+                    <td><code>0x742d35Cc6634C0532925a3b844Bc9e759cFfC0B4</code></td>
+                </tr>
+                <tr>
+                    <td>To (Scammer Wallet)</td>
+                    <td><code>0x3e5c1f2a4b8d9c7e6f5a4b3c2d1e0f9a8b7c6d5e4</code></td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td>47.3 ETH</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="report-section">
+            <h2>3. FORENSIC METHODOLOGY</h2>
+            <h3>Tools Utilized</h3>
+            <table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>Helios Engine (Proprietary)</td>
+                    <td>Multi-chain transaction graph analysis</td>
+                </tr>
+                <tr>
+                    <td>Etherscan API</td>
+                    <td>Ethereum transaction data extraction</td>
+                </tr>
+                <tr>
+                    <td>Arbitrum Bridge Tracker</td>
+                    <td>L1→L2 transaction mapping</td>
+                </tr>
+                <tr>
+                    <td>Chainalysis API</td>
+                    <td>Exchange deposit address labeling</td>
+                </tr>
+            </table>
+            
+            <h3>Tracing Steps</h3>
+            <ol style="margin-left: 20px;">
+                <li><strong>Transaction Extraction:</strong> Initial transaction identified from victim wallet to scammer wallet.</li>
+                <li><strong>First Hop Analysis:</strong> Scammer wallet moved funds within 2 hours to bridge contract.</li>
+                <li><strong>Bridge Parsing:</strong> Arbitrum bridge contract (0xce0c...3b4a) identified as intermediary.</li>
+                <li><strong>Destination Chain Tracing:</strong> Funds reappeared on Ethereum mainnet after bridge withdrawal.</li>
+                <li><strong>Exchange Detection:</strong> Final destination identified as Binance deposit address.</li>
+                <li><strong>Exchange Coordination:</strong> Binance notified; funds frozen within 6 hours of identification.</li>
+            </ol>
+        </div>
+        
+        <div class="report-section">
+            <h2>4. FUND FLOW DIAGRAM</h2>
+            <div class="flow-diagram">
+┌─────────────────────────────────────────────────────────────────┐
+│                      FUND FLOW VISUALIZATION                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Victim Wallet (0x742d...C0B4)                                  │
+│  │                                                              │
+│  │ TX: 0x7f8a...3b2c                                           │
+│  ▼ 47.3 ETH                                                     │
+│                                                                 │
+│  Scammer Wallet B (0x3e5c...1f2a)                               │
+│  │                                                              │
+│  │ TX: 0x9c2d...4e8f                                           │
+│  ▼ 47.3 ETH                                                     │
+│                                                                 │
+│  Bridge Contract – Arbitrum (0xce0c...3b4a)                     │
+│  │                                                              │
+│  │ Bridge Withdrawal TX: 0x2a5f...7d3e                         │
+│  ▼ 47.3 ETH                                                     │
+│                                                                 │
+│  Scammer Wallet D (0x1f2c...4a8e)                               │
+│  │                                                              │
+│  │ TX: 0x5b8e...9c1d                                           │
+│  ▼ 47.3 ETH                                                     │
+│                                                                 │
+│  Binance Deposit Address (0x2c4b...7e9f)                        │
+│  │                                                              │
+│  │ ⚡ FROZEN – November 16, 2024, 09:15 UTC                    │
+│  ▼                                                              │
+│                                                                 │
+│  ✅ RECOVERY PATH IDENTIFIED – Legal Process Initiated          │
+└─────────────────────────────────────────────────────────────────┘
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2>5. EXCHANGE DETECTION & COORDINATION</h2>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Exchange</strong></td>
+                    <td>Binance (Binance Holdings Limited)</td>
+                </tr>
+                <tr>
+                    <td><strong>Deposit Address</strong></td>
+                    <td><code>0x2c4b9e7d1f5a8c3b6e9d2f4a7b1c5e8d3f6a9b2c</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Deposit Timestamp</strong></td>
+                    <td>2024-11-15 17:08:42 UTC</td>
+                </tr>
+                <tr>
+                    <td><strong>Account Status</strong></td>
+                    <td>Verified account – KYC completed (Indonesia-based user)</td>
+                </tr>
+                <tr>
+                    <td><strong>Freeze Status</strong></td>
+                    <td>Frozen – November 16, 2024, 09:15 UTC</td>
+                </tr>
+                <tr>
+                    <td><strong>Coordination Method</strong></td>
+                    <td>Emergency legal request via Cayman Islands counsel</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="report-section">
+            <h2>6. LIMITATIONS & DISCLOSURES</h2>
+            <div class="warning-box">
+                <strong>⚠️ TRACING LIMITATIONS ACKNOWLEDGED:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>No mixers (Tornado Cash, Wasabi) were encountered in this path</li>
+                    <li>No privacy coins (Monero, Zcash shielded) were used</li>
+                    <li>All transactions occurred on public blockchains (Ethereum, Arbitrum)</li>
+                    <li>Bridge contract was standard and traceable</li>
+                    <li>Exchange deposit address was identifiable via labeling</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Recovery Probability Based on These Factors: HIGH (85%)</strong></p>
+            </div>
+            
+            <h3>What We Cannot Trace (General Limitations)</h3>
+            <table>
+                <tr>
+                    <th>Obstacle</th>
+                    <th>Impact on Recovery</th>
+                </tr>
+                <tr>
+                    <td>Monero (XMR) conversion</td>
+                    <td>0% – Impossible to trace</td>
+                </tr>
+                <tr>
+                    <td>Tornado Cash deposit</td>
+                    <td>&lt;5% – Funds become anonymous</td>
+                </tr>
+                <tr>
+                    <td>Wasabi / Samourai CoinJoin</td>
+                    <td>5-10% – Limited tracing capability</td>
+                </tr>
+                <tr>
+                    <td>Non-cooperative exchange</td>
+                    <td>30% – Legal process may fail</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="report-section">
+            <h2>7. TIMELINE OF ACTIONS</h2>
+            <table>
+                <tr>
+                    <th>Date & Time (UTC)</th>
+                    <th>Action</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>2024-11-15 14:23</td>
+                    <td>Incident occurs – 47.3 ETH stolen</td>
+                    <td>Victim notification</td>
+                </tr>
+                <tr>
+                    <td>2024-11-15 16:00</td>
+                    <td>Victim contacts Cipher Rescue Chains</td>
+                    <td>Engagement initiated</td>
+                </tr>
+                <tr>
+                    <td>2024-11-15 18:30</td>
+                    <td>Initial tracing completed – funds identified at Binance</td>
+                    <td>Binance notified</td>
+                </tr>
+                <tr>
+                    <td>2024-11-16 09:15</td>
+                    <td>Binance confirms freeze of assets</td>
+                    <td>Funds secured</td>
+                </tr>
+                <tr>
+                    <td>2024-11-17 14:00</td>
+                    <td>Cayman Islands freezing order obtained</td>
+                    <td>Legal process initiated</td>
+                </tr>
+                <tr>
+                    <td>2024-11-20</td>
+                    <td>Forensic report issued to counsel</td>
+                    <td>Ongoing</td>
+                </tr>
+                <tr>
+                    <td>Pending</td>
+                    <td>Disclosure order and repatriation</td>
+                    <td>Estimated 30-45 days</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="report-section">
+            <h2>8. RECOMMENDATIONS</h2>
+            <table>
+                <tr>
+                    <th>Priority</th>
+                    <th>Action</th>
+                    <th>Responsible Party</th>
+                </tr>
+                <tr>
+                    <td>High</td>
+                    <td>Serve formal legal process on Binance for disclosure</td>
+                    <td>Cayman Islands counsel</td>
+                </tr>
+                <tr>
+                    <td>High</td>
+                    <td>Obtain court order for repatriation of frozen funds</td>
+                    <td>Cayman Islands counsel</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>File police report in Singapore for criminal investigation</td>
+                    <td>Victim</td>
+                </tr>
+                <tr>
+                    <td>Low</td>
+                    <td>Enhance wallet security protocols</td>
+                    <td>Victim</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="report-section">
+            <h2>9. ANALYST CERTIFICATION</h2>
+            <p>I, Daniel Vaughn, CTO of Cipher Rescue Chains, LLC, certify that:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>The tracing methodology described herein follows industry standards for blockchain forensic investigation.</li>
+                <li>All transaction data was obtained from public blockchain explorers and verified through multiple sources.</li>
+                <li>Exchange deposit addresses were confirmed via Chainalysis labeling and independent verification.</li>
+                <li>This report accurately represents the fund flow as of the date of issuance.</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>Daniel Vaughn</strong><br>
+            Chief Technology Officer<br>
+            Cipher Rescue Chains, LLC<br>
+            CISSP | Certified Cryptocurrency Investigator<br>
+            <em>November 20, 2024</em></p>
+        </div>
+        
+        <div class="footer">
+            <p>This report is confidential and protected by attorney-client privilege. Distribution is restricted to authorized parties involved in the recovery process.</p>
+            <p>© 2024 Cipher Rescue Chains, LLC | Est. 2015 | cipherrescuechains.com</p>
+            <p>Page 1 of 1 | CRC-2024-0892</p>
+        </div>
+    </div>
+</body>
+</html>
